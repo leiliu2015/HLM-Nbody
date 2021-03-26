@@ -1,6 +1,6 @@
 ## HLM-Nbody
 
-HLM-***Nbody*** is a polymer physics-based pipeline to predict chromatin *n*-body contact probability (*n>=2*) based on Hi-C data. As an updated version of [HLM](https://github.com/leiliu2015/HLM), we optimized the numeric algorithm by learning a lot from [PHi-C](https://github.com/soyashinkai/PHi-C) and the following two papers:
+HLM-***Nbody*** is a polymer physics-based analysis method to predict chromatin *n*-body contact probability (*n>2*) from Hi-C data. As an updated version of [HLM](https://github.com/leiliu2015/HLM), we optimized the numeric algorithm by learning a lot from [PHi-C](https://github.com/soyashinkai/PHi-C) and the following two papers:
 - G. Le Treut, F. Képès, and H. Orlands, [A polymer model for the quantitative reconstruction of chromosome architecture from HiC and GAM data](http://dx.doi.org/10.1016/j.bpj.2018.10.032), Biophys. J. 115, 2286-2294 (2018).
 - P. Metha, M. Bukov, C.-H. Wang, A. G. R. Day, C. Richardson, C. K. Fisher, and D. J. Schwab, [A high-bias, low-variance introduction to Machine Learning for physicists](https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub), Phys. Rep. 810, 1-124 (2019).
 
@@ -35,7 +35,7 @@ This takes less than 5 minutes to finish the modeling on our desktop with a Inte
 ```
 $ gnuplot -persist tric_a.gnu
 ``` 
-The approximate running time in each directory and their corresponding figure indices in our [preprint]() are listed in the following table for your reference. Notice that the running time is relatively long in the last two directories, since the same genomic region will be modeled 32 times with different choices in the optimization process of {*k<sub>ij</sub>*}. Those 32 models are then compared to determine the best choice for training other examples.
+The approximate running time in each directory and their corresponding figure indices in our [preprint]() are listed in the following table for your reference. The running time is relatively long in the last two directories, as the same genomic region is modeled 32 times with different choices in the process of training {*k<sub>ij</sub>*}. Those 32 models are then compared to determine the best choice to train other examples.
 
 | Directory | Running Time /min | Figure |
 | --------- | ------------------ | -------|
