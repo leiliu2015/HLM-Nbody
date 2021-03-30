@@ -40,7 +40,7 @@ The approximate running time in each directory and their corresponding figure in
 | Directory | Running Time /min | Figure |
 | --------- | ------------------ | -------|
 |gaussianChain | 3 | Fig. 5 and Fig. S8
-|chromatinTracing | 1 | Fig. S8|
+|chromatinTracing | 1 | Fig. S9|
 |tric | 4 | Fig. 2|
 |mc4c | 3 | Fig. 3|
 |sprite | 2 | Fig. 4 and Fig. S7|
