@@ -1,6 +1,6 @@
 ## HLM-Nbody
 
-HLM-***Nbody*** is a polymer physics-based analysis method to predict chromatin *n*-body contact probability (*n>2*) from Hi-C data. As an updated version of [HLM](https://github.com/leiliu2015/HLM), we optimized the numeric algorithm by learning a lot from [PHi-C](https://github.com/soyashinkai/PHi-C) and the following two papers:
+HLM-***Nbody*** is a polymer physics-based analysis method to predict chromatin *n*-body contact probability (*n>2*) from Hi-C data. As an updated version of [HLM](https://github.com/leiliu2015/HLM), we optimized the numeric algorithm by considering [PHi-C](https://github.com/soyashinkai/PHi-C) and the following two papers:
 - G. Le Treut, F. Képès, and H. Orlands, [A polymer model for the quantitative reconstruction of chromosome architecture from HiC and GAM data](http://dx.doi.org/10.1016/j.bpj.2018.10.032), Biophys. J. 115, 2286-2294 (2018).
 - P. Metha, M. Bukov, C.-H. Wang, A. G. R. Day, C. Richardson, C. K. Fisher, and D. J. Schwab, [A high-bias, low-variance introduction to Machine Learning for physicists](https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub), Phys. Rep. 810, 1-124 (2019).
 
@@ -39,11 +39,11 @@ The approximate running time in each directory and their corresponding figure in
 
 | Directory | Running Time /min | Figure |
 | --------- | ------------------ | -------|
-|gaussianChain | 3 | Fig. 5 and Fig. S7
+|gaussianChain | 3 | Fig. 5 and Fig. S8
 |chromatinTracing | 1 | Fig. S8|
 |tric | 4 | Fig. 2|
 |mc4c | 3 | Fig. 3|
-|sprite | 2 | Fig. 4 and Fig. S6|
+|sprite | 2 | Fig. 4 and Fig. S7|
 |numeric_mESC | 20 | Fig. S2|
 |numeric_GM12878 | 80 | Fig. S3|
 
