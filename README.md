@@ -4,7 +4,7 @@ HLM-***Nbody*** is a polymer physics-based analysis method to predict chromatin 
 - G. Le Treut, F. Képès, and H. Orlands, [A polymer model for the quantitative reconstruction of chromosome architecture from HiC and GAM data](http://dx.doi.org/10.1016/j.bpj.2018.10.032), Biophys. J. 115, 2286-2294 (2018).
 - P. Metha, M. Bukov, C.-H. Wang, A. G. R. Day, C. Richardson, C. K. Fisher, and D. J. Schwab, [A high-bias, low-variance introduction to Machine Learning for physicists](https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub), Phys. Rep. 810, 1-124 (2019).
 
-Necessary codes written in Python and [Gnuplot](gnuplot.sourceforge.net) scripts to reproduce most results in our recent [work]() are archived in this repository, which have been tested on ubuntu 16.04/18.04 LTS. We recommend [Anaconda](https://www.anaconda.com/distribution/) to manage the Python environment (Python ***3.7***) and packages, such as H5py, NumPy, and Scipy. Unlike [HLM](https://github.com/leiliu2015/HLM), it does *not* reply on molecular dynamics simulations any more.
+Necessary codes written in Python and [Gnuplot](gnuplot.sourceforge.net) scripts to reproduce most results in our recent [work]() are archived in this repository, which have been tested on ubuntu 16.04/18.04 LTS. We recommend [Anaconda](https://www.anaconda.com/distribution/) to manage the Python environment (Python ***3.7***) and packages, such as H5py, NumPy, and Scipy. Unlike [HLM](https://github.com/leiliu2015/HLM), it does *not* rely on molecular dynamics simulations any more.
 
 ### File Description
 - tino/
