@@ -35,7 +35,7 @@ This takes less than 5 minutes to finish the modeling on our desktop with a Inte
 ```
 $ gnuplot -persist tric_a.gnu
 ``` 
-The approximate running time in each directory and their corresponding figure indices in our [preprint]() are listed in the following table for your reference. The running time is relatively long in the last two directories, as the same genomic region is modeled 32 times with different choices in the process of training {*k<sub>ij</sub>*}. Those 32 models are then compared to determine the best choice to train other examples.
+The approximate running time in each directory and their corresponding figure indices in our [preprint]() are listed in the following table for your reference. The running time was relatively long in the last two directories, as the same genomic region was modeled 32 times with different choices in the process of training {*k<sub>ij</sub>*}. The results were then compared to determine the best choice to train other examples.
 
 | Directory | Running Time /min | Figure |
 | --------- | ------------------ | -------|

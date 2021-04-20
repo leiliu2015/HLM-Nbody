@@ -71,7 +71,8 @@ else:
         s = abs(array([i-j, i-k, j-k]))
         mis = min(s)
         mas = max(s)
-        z = fr.get('cm')[i,j,k]/p3_exp[mas, mis, 0]
+        if p3_exp[mas, mis, 1] == 0: continue
+        z = (fr.get('cm')[i,j,k] - p3_exp[mas, mis, 0])/p3_exp[mas, mis, 1]
         zs[-1].append(z)
         if not isnan(z):
             #
@@ -100,11 +101,17 @@ else:
     for m in range(M):
         lt = "%s " % (cbs[m])
         if zs[m] == []:
-            lt += "N: %7d z: %12s %12s" % (0, 'NaN', 'NaN')
+            lt += "N: %7d z: %12s %12s " % (0, 'NaN', 'NaN')
+            lt += 'qt '
+            for q in range(5):
+                lt += "%12s " % ('NaN')
         else:
             zm = array(zs[m])
-            zm_ln = log(zm[zm>0])
-            lt += "N: %7d z: %11.5e %11.5e log(z): %+12.5e %11.5e" % (len(zm), nanmean(zm), nanstd(zm), mean(zm_ln), std(zm_ln))
+            zx = zm[ where(isnan(zm)==0)[0] ]
+            lt += "N: %7d z: %+12.5e %+12.5e " % (len(zm), mean(zx), std(zx))
+            lt += 'qt '
+            for q in range(5):
+                lt += "%+12.5e " % (quantile(zx, q/4.0))
         fw.write(lt+'\n')
     fw.close()
 

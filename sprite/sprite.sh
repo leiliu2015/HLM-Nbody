@@ -1,7 +1,6 @@
 #!/bin/bash
 
 codesDir=../tino
-experDir=/home/kapok/Downloads/triplets/CHROMATIX
 rois=(19 10)
 Ns=(89 104)
 cp ../tino/mdRandomSeeds ./

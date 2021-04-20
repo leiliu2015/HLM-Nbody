@@ -87,7 +87,7 @@ else:
     p3_exp = fr.get('p3_exp')[()]
     fr.close()
     #
-    z3_vp = zeros((N, N, PN))*nan
+    z3_vp = zeros((N, N, PN, 2))*nan
     for p in range(0, PN):
         k = pdx[p]
         for i in range(0, N):
@@ -96,8 +96,10 @@ else:
                     s = abs(array([i-j, i-k, j-k]))
                     mis = min(s)
                     mas = max(s)
-                    z3_vp[i,j,p] = p3_exp[mas, mis, 0]
-                    z3_vp[j,i,p] = p3_exp[mas, mis, 0]
+                    z3_vp[i,j,p,0] = p3_exp[mas, mis, 0]
+                    z3_vp[j,i,p,0] = p3_exp[mas, mis, 0]
+                    z3_vp[i,j,p,1] = p3_exp[mas, mis, 1]
+                    z3_vp[j,i,p,1] = p3_exp[mas, mis, 1]
 
 # Save TXT (merge consecutive promoters into promoter-blocks)
 for b in range(0, PBN):
@@ -113,12 +115,15 @@ for b in range(0, PBN):
     saveMx(fo+'.pm', P, "#N: %d min: %11.5e max: %11.5e\n"%(N, nanmin(P), nanmax(P)))
     #
     E = zeros((N, N))
+    V = zeros((N, N))
     for p in ps:
-        E += z3_vp[:,:,p]
+        E += z3_vp[:,:,p,0]
+        V += z3_vp[:,:,p,1]
     E /= float(len(ps))
+    V /= float(len(ps))
     saveMx(fo+'.em', E, "#N: %d min: %11.5e max: %11.5e\n"%(N, nanmin(E), nanmax(E)))
     #
-    Z = P/E
+    Z = (P-E)/V
     saveMx(fo+'.sm', Z, "#N: %d min: %11.5e max: %11.5e\n"%(N, nanmin(Z), nanmax(Z)))
 
 

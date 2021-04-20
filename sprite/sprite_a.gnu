@@ -39,13 +39,13 @@ plot fa matrix u ($1+0.5):($2+0.5):($1<$2 ? $3*1.6/28-4.0 : NaN) w image pixels,
 # \overline{p}_{ijk}
 fb = sprintf("TAD%02d/N%d-F%d-L%d-M%d-r0.K_fit.q3.vp%03d-%03d.em", tdx, N, fdx, ldx, mdx, vps, vpe)
 set cbrange [-4.:-2.4]; set cbtics -6,1,0; set cbtics in scale 0.5; set mcbtics 2;
-set title 'p@^{expected}_{ijk}'
+set title '~p{1.0\-}_{ ijk}'
 plot fb matrix u ($1+0.5):($2+0.5):($1==$2 ? NaN : log10($3)) w image pixels
 
 # Z_{ijk}
 fb = sprintf("TAD%02d/N%d-F%d-L%d-M%d-r0.K_fit.q3.vp%03d-%03d.sm", tdx, N, fdx, ldx, mdx, vps, vpe)
-set cbrange [0.3:3.8]; set cbtics -6,2,0; set cbtics in scale 0.5; set mcbtics 2;
-set palette defined(0'#3b4cc0',0.2'white',1'#b40426')
+set cbrange [-2:5]; set cbtics -4,4,8; set cbtics in scale 0.5; set mcbtics 4;
+set palette defined(0'#3b4cc0',2.0/7'white',1'#b40426')
 set title 'Z_{ijk}'
 plot fb matrix u ($1+0.5):($2+0.5):($1==$2 ? NaN : $3) w image pixels
 
@@ -66,19 +66,18 @@ plot fx u 9:18:8:10:17:19 w xyerror lw mlw pt 7 ps mps notitle
 set datafile commentschars "%"
 set tics nomirror
 fx= sprintf("TAD%02d/N%d-F0-L1-M4-r0.K_fit.q3.ENPS", tdx, N)
-cr= 0.582676
 set size ratio 0.3
 set xrange [-0.5:19.5]
-set yrange [0.1:2.7]
+set yrange [-1.8:2.8]
 set xtics rotate 90 scale 0.2
-set ytics 0,1,4; set mytics 2
+set ytics -2,1,3; set mytics 2
 set ylabel 'Z' offset 2, 0
 unset xlabel
 set border 2
-set arrow 1 from graph 0, first 1 to graph 1, first 1 nohead lc rgb 'black' lw 1 back
-set obj 2 rectangle from graph 0, first 1-cr to graph 1, first 1+cr
+set arrow 1 from graph 0, first 0 to graph 1, first 0 nohead lc rgb 'black' lw 1 back
+set obj 2 rectangle from graph 0, first -1 to graph 1, first 1
 set obj 2 fc rgb '#E6E6E6' fs solid 1.0 noborder back
-plot fx u 0:($5> 1+cr? $5 : NaN):6:xticlabels(1) w error lw mlw lc rgb 'red'  pt 7 ps mps notitle, \
-     fx u 0:($5<=1+cr? $5 : NaN):6:xticlabels(1) w error lw mlw lc rgb 'blue' pt 7 ps mps notitle
+plot fx u 0:($5> 0.47? $5 : NaN):6:xticlabels(1) w error lw mlw lc rgb 'red'  pt 7 ps mps notitle, \
+     fx u 0:($5<=0.47? $5 : NaN):6:xticlabels(1) w error lw mlw lc rgb 'blue' pt 7 ps mps notitle
 
 unset multiplot
