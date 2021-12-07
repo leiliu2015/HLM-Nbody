@@ -4,7 +4,7 @@ HLM-***Nbody*** is a polymer physics-based analysis method to predict chromatin 
 - G. Le Treut, F. Képès, and H. Orlands, [A polymer model for the quantitative reconstruction of chromosome architecture from HiC and GAM data](http://dx.doi.org/10.1016/j.bpj.2018.10.032), Biophys. J. 115, 2286-2294 (2018).
 - P. Metha, M. Bukov, C.-H. Wang, A. G. R. Day, C. Richardson, C. K. Fisher, and D. J. Schwab, [A high-bias, low-variance introduction to Machine Learning for physicists](https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub), Phys. Rep. 810, 1-124 (2019).
 
-Necessary codes written in Python and [Gnuplot](gnuplot.sourceforge.net) scripts to reproduce most results in our recent [work]() are archived in this repository, which have been tested on ubuntu 16.04/18.04 LTS. We recommend [Anaconda](https://www.anaconda.com/distribution/) to manage the Python environment (Python ***3.7***) and packages, such as H5py, NumPy, and Scipy. Unlike [HLM](https://github.com/leiliu2015/HLM), it does *not* rely on molecular dynamics simulations any more.
+Necessary codes written in Python and [Gnuplot](gnuplot.sourceforge.net) scripts to reproduce most results in our recent [article](http://dx.doi.org/10.1371/journal.pcbi.1009669) are archived in this repository, which have been tested on ubuntu 16.04/18.04 LTS. We recommend [Anaconda](https://www.anaconda.com/distribution/) to manage the Python environment (Python ***3.7***) and packages, such as H5py, NumPy, and Scipy. Unlike [HLM](https://github.com/leiliu2015/HLM), it does *not* rely on molecular dynamics simulations any more.
 
 ### File Description
 - tino/
@@ -39,12 +39,12 @@ The approximate running time in each directory and their corresponding figure in
 
 | Directory | Running Time /min | Figure |
 | --------- | ------------------ | -------|
-|gaussianChain | 3 | Fig. 5 and Fig. S8
-|chromatinTracing | 1 | Fig. S9|
-|tric | 4 | Fig. 2|
-|mc4c | 3 | Fig. 3|
-|sprite | 2 | Fig. 4 and Fig. S7|
-|numeric_mESC | 20 | Fig. S2|
-|numeric_GM12878 | 80 | Fig. S3|
+|gaussianChain | 3 | Fig. 6 and Fig. S6
+|chromatinTracing | 1 | Fig. S7|
+|tric | 4 | Fig. 3|
+|mc4c | 3 | Fig. 4|
+|sprite | 2 | Fig. 5 and Fig. S5|
+|numeric_mESC | 20 | Fig. S12|
+|numeric_GM12878 | 80 | Fig. S13|
 
 All the output files can be deleted by typing `$ bash ./clearAll.sh` at the repository root. For further questions and possible applications about HLM-Nbody, please contact Lei Liu (leiliu2015@163.com)
