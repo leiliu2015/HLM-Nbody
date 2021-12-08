@@ -10,7 +10,7 @@ Necessary codes written in Python and [Gnuplot](gnuplot.sourceforge.net) scripts
 - tino/
   - [tino_nan.py](tino/tino_nan.py) (A Python script which reads a Hi-C contact probability matrix to calculates {*k<sub>ij</sub>*})
   - [tino_K2P.py](tino/tino_K2P.py) (A Python script to calculate *n*-body contacts *p<sub>n</sub>*, for *n>=2*, based on {*k<sub>ij</sub>*})
-  - [tino_exp.py](tino/tino_exp.py) (A Python script to calculate the expected *p<sub>ijk</sub>*, as defined by Eq. 2 in the [prepreint]())
+  - [tino_exp.py](tino/tino_exp.py) (A Python script to calculate the expected *p<sub>ijk</sub>*, as shown in Fig. 5F of the [article](http://dx.doi.org/10.1371/journal.pcbi.1009669))
   - [tino_ps.py](tino/tino_ps.py) (A Python script which merges {*p<sub>ij</sub>*} from Hi-C and from the model for visual comparison)
   - [averageLogs.py](tino/averageLogs.py) (A Python script to average the {*k<sub>ij</sub>*} training log files over independent replicas)
   - [tino_K2cfgs.py](tino/tino_K2cfgs.py) (A *auxiliary* Python script to generate three-dimensional chromatin structures based on {*k<sub>ij</sub>*})
@@ -35,7 +35,7 @@ This takes less than 5 minutes to finish the modeling on our desktop with a Inte
 ```
 $ gnuplot -persist tric_a.gnu
 ``` 
-The approximate running time in each directory and their corresponding figure indices in our [preprint]() are listed in the following table for your reference. The running time was relatively long in the last two directories, as the same genomic region was modeled 32 times with different choices in the process of training {*k<sub>ij</sub>*}. The results were then compared to determine the best choice to train other examples.
+The approximate running time in each directory and their corresponding figure indices in our [paper](http://dx.doi.org/10.1371/journal.pcbi.1009669) are listed in the following table for your reference. The running time was relatively long in the last two directories, as the same genomic region was modeled 32 times with different choices in the process of training {*k<sub>ij</sub>*}. The results were then compared to determine the best choice to train other examples.
 
 | Directory | Running Time /min | Figure |
 | --------- | ------------------ | -------|
